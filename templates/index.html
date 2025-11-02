@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ page_title }}</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; background-color: #f4f4f9; }
+        .container { padding: 30px; border: 1px solid #ccc; border-radius: 8px; display: inline-block; background-color: white; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        p { color: #555; font-size: 1.1em; }
+        .time { font-weight: bold; color: #007bff; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>{{ message }}</h1>
+        <p>This is a simple application demonstrating a successful deployment.</p>
+        <p>The current server time is: <span class="time">{{ server_time }}</span></p>
+        <p>Source language: Python (Flask)</p>
+    </div>
+</body>
+</html>
