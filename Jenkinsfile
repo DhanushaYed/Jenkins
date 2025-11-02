@@ -2,11 +2,11 @@ pipeline {
     agent any
     environment {
         APP_NAME = "flask-app"
-        DEPLOY_USER = "ubuntu"
-        DEPLOY_HOST = "your-server-ip"
-        DEPLOY_PATH = "/home/ubuntu/flask-app"
-        RESTART_SCRIPT = "/home/ubuntu/restart_flask.sh"
-        GIT_REPO = "https://github.com/yourusername/your-flask-repo.git"
+        DEPLOY_USER = "ec2-user"
+        DEPLOY_HOST = "16.176.98.138"
+        DEPLOY_PATH = "/home/ec2-user/flask-app"
+        RESTART_SCRIPT = "/home/ec2-user/restart_flask.sh"
+        GIT_REPO = "https://github.com/DhanushaYed/Jenkins.git"
     }
     stages {
         stage('Checkout Code') {
@@ -40,13 +40,13 @@ pipeline {
     post {
         success {
             echo " Flask app deployed successfully!"
-            mail to: 'team@example.com',
+            mail to: 'yedduladhanusha@gmail.com',
                  subject: "SUCCESS: ${APP_NAME} deployed (Build #${BUILD_NUMBER})",
                  body: "Flask app deployed successfully.\n\nBuild URL: ${BUILD_URL}"
         }
         failure {
             echo " Deployment failed!"
-            mail to: 'team@example.com',
+            mail to: 'yedduladhanusha@gmail.com',
                  subject: "FAILURE: ${APP_NAME} deployment (Build #${BUILD_NUMBER})",
                  body: "Deployment failed. Please check Jenkins logs.\n\nBuild URL: ${BUILD_URL}"
         }
