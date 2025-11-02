@@ -39,16 +39,17 @@ pipeline {
     }
     post {
         success {
-            echo "✅ Flask app deployed successfully!"
+            echo " Flask app deployed successfully!"
             mail to: 'team@example.com',
                  subject: "SUCCESS: ${APP_NAME} deployed (Build #${BUILD_NUMBER})",
                  body: "Flask app deployed successfully.\n\nBuild URL: ${BUILD_URL}"
         }
         failure {
-            echo "❌ Deployment failed!"
+            echo " Deployment failed!"
             mail to: 'team@example.com',
                  subject: "FAILURE: ${APP_NAME} deployment (Build #${BUILD_NUMBER})",
                  body: "Deployment failed. Please check Jenkins logs.\n\nBuild URL: ${BUILD_URL}"
         }
     }
 }
+
